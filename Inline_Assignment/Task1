@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Riya Agrawal - Resume</title>
+    <title>Anamika Rai - Resume</title>
 </head>
 <body>
 
     <!-- Header -->
     <header>
-        <h1>Riya Agrawal</h1>
-        <p>Email: riya@example.com | Phone: +91-XXXXXXXXXX | LinkedIn: linkedin.com/in/riyaagrawal</p>
+        <h1>Anamika Rai</h1>
+        <p>Email: anamika@example.com | Phone: +91-XXXXXXXXXX | LinkedIn: linkedin.com/in/anamikarai</p>
     </header>
 
     <!-- Navigation -->
@@ -80,7 +80,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Riya Agrawal. All Rights Reserved.</p>
+        <p>&copy; 2025 Anamika Rai. All Rights Reserved.</p>
     </footer>
 
 </body>
