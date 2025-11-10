@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Web Design Layout</title>
+  <style>
+    /* ---------- Base Styles ---------- */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* ---------- Header ---------- */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #0d6efd;
+      color: white;
+      padding: 15px 30px;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* ---------- Main Section ---------- */
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      padding: 40px;
+      flex-wrap: wrap; /* Helps wrap content for smaller screens */
+    }
+
+    .feature-box {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      flex: 1;
+      min-width: 220px;
+      max-width: 300px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature-box:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .feature-box h3 {
+      color: #0d6efd;
+      margin-bottom: 10px;
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      text-align: center;
+      background-color: #0d6efd;
+      color: white;
+      padding: 15px;
+    }
+
+    /* ---------- Responsive (Below 750px) ---------- */
+    @media (max-width: 750px) {
+      main {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">FlexWeb</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Services</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Main Section -->
+  <main>
+    <div class="feature-box">
+      <h3>Fast Performance</h3>
+      <p>Our system ensures quick loading speeds and optimized performance across all devices.</p>
+    </div>
+
+    <div class="feature-box">
+      <h3>Responsive Design</h3>
+      <p>Enjoy a seamless experience whether you’re on a desktop, tablet, or smartphone.</p>
+    </div>
+
+    <div class="feature-box">
+      <h3>Easy Customization</h3>
+      <p>Quickly modify content, layout, and styles to match your brand’s unique identity.</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 FlexWeb. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
