@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Paris</title>
+  <style>
+    /* ---------- GLOBAL STYLES ---------- */
+    body {
+      margin: 0;
+      font-family: "Arial", sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ---------- HEADER ---------- */
+    header {
+      background-color: #2c3e50;
+      color: #fff;
+      padding: 1rem 5%;
+      position: sticky;
+      top: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    nav a {
+      margin-left: 2em;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #e67e22;
+    }
+
+    /* ---------- MAIN SECTIONS ---------- */
+    main section {
+      padding: 80px 10%;
+      border-bottom: 1px solid #ddd;
+    }
+
+    /* Section 1: Hero Image */
+    #hero {
+      background-image: url('https://picsum.photos/1600/600?city');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      text-align: center;
+      height: 60vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-bottom: none;
+    }
+
+    #hero h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 0.5em;
+    }
+
+    #hero p {
+      font-size: 1.5rem;
+      font-weight: 400;
+    }
+
+    /* Section 2: About City with Linear Gradient */
+    #about {
+      background: linear-gradient(120deg, #fbc2eb, #a6c1ee);
+      color: #333;
+      text-align: left;
+      border-radius: 10px;
+    }
+
+    #about h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    #about p {
+      font-size: 1.1rem;
+      margin-bottom: 1em;
+    }
+
+    /* Section 3: Attractions with Radial Gradient */
+    #attractions {
+      background: radial-gradient(circle at center, #ffe29f, #ff7e5f);
+      color: #333;
+      text-align: left;
+      border-radius: 10px;
+    }
+
+    #attractions h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    #attractions ul {
+      list-style-type: disc;
+      padding-left: 2rem;
+    }
+
+    #attractions li {
+      margin-bottom: 0.5em;
+    }
+
+    /* Section 4: Culture Section */
+    #culture {
+      background-color: #ecf0f1;
+      border-radius: 10px;
+    }
+
+    #culture h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    #culture p {
+      font-size: 1.1rem;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      background-color: #2c3e50;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        margin-top: 0.5rem;
+      }
+
+      #hero h2 {
+        font-size: 2rem;
+      }
+
+      #hero p {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>Discover Paris</h1>
+    <nav>
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#attractions">Attractions</a>
+      <a href="#culture">Culture</a>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <!-- Hero Section -->
+    <section id="hero">
+      <h2>Welcome to the City of Light</h2>
+      <p>Experience the romance, history, and vibrant culture of Paris</p>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <h2>About Paris</h2>
+      <p>Paris, the capital city of France, is known for its iconic landmarks like the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. It is a hub of art, fashion, gastronomy, and culture.</p>
+      <p>The city offers a mix of historic architecture, charming streets, and modern amenities, making it a favorite destination for travelers worldwide.</p>
+    </section>
+
+    <!-- Attractions Section -->
+    <section id="attractions">
+      <h2>Main Attractions</h2>
+      <ul>
+        <li>Eiffel Tower</li>
+        <li>Louvre Museum</li>
+        <li>Notre-Dame Cathedral</li>
+        <li>Montmartre & Sacré-Cœur</li>
+        <li>Seine River Cruise</li>
+      </ul>
+    </section>
+
+    <!-- Culture Section -->
+    <section id="culture">
+      <h2>Cultural Highlights</h2>
+      <p>Paris is renowned for its cafés, art galleries, and vibrant nightlife. The city hosts numerous art exhibitions, music festivals, and fashion shows. Culinary experiences, including French pastries, gourmet meals, and street food, add to its charm.</p>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 Discover Paris | All Rights Reserved
+  </footer>
+
+</body>
+</html>
