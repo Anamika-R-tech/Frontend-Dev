@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Tooltip Demonstration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .tooltip-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .tooltip {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: 500;
+      color: #0d6efd;
+    }
+
+    /* Tooltip Text */
+    .tooltip .tooltip-text {
+      visibility: hidden;
+      width: 160px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 8px;
+      position: absolute;
+      bottom: 130%;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+      z-index: 1;
+    }
+
+    /* Tooltip Arrow */
+    .tooltip .tooltip-text::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #333 transparent transparent transparent;
+    }
+
+    /* Show Tooltip on Hover */
+    .tooltip:hover .tooltip-text {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    /* Different Tooltip Positions */
+    .tooltip.top .tooltip-text {
+      bottom: 130%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .tooltip.right .tooltip-text {
+      left: 110%;
+      top: 50%;
+      bottom: auto;
+      transform: translateY(-50%);
+    }
+
+    .tooltip.bottom .tooltip-text {
+      top: 130%;
+      bottom: auto;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .tooltip.left .tooltip-text {
+      right: 110%;
+      top: 50%;
+      bottom: auto;
+      transform: translateY(-50%);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="tooltip-container">
+    <div class="tooltip top">
+      🔍 Hover Me
+      <span class="tooltip-text">Tooltip on Top</span>
+    </div>
+
+    <div class="tooltip right">
+      💡 Idea
+      <span class="tooltip-text">Tooltip on Right</span>
+    </div>
+
+    <div class="tooltip bottom">
+      📞 Contact
+      <span class="tooltip-text">Tooltip on Bottom</span>
+    </div>
+
+    <div class="tooltip left">
+      ⚙️ Settings
+      <span class="tooltip-text">Tooltip on Left</span>
+    </div>
+  </div>
+
+</body>
+</html>
