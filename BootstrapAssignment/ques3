@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Store | Product Grid</title>
+
+  <!-- Bootstrap CSS via CDN -->
+  <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+    rel="stylesheet">
+
+  <style>
+    /* Smooth hover effect for product cards */
+    .product-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+  </style>
+</head>
+
+<body class="bg-light text-dark">
+
+  <!-- Header -->
+  <header class="text-center py-4 bg-dark text-white mb-4">
+    <h2 class="fw-bold">ShopEase</h2>
+    <p class="mb-0">Your one-stop store for quality products</p>
+  </header>
+
+  <!-- Product Grid Section -->
+  <section class="container mb-5">
+    <div class="row g-4">
+      <!-- Product 1 -->
+      <div class="col-12 col-sm-6 col-md-3">
+        <div class="card product-card shadow-sm h-100 text-center p-3">
+          <img src="https://via.placeholder.com/200" class="card-img-top img-fluid mb-3" alt="Product 1">
+          <h5 class="card-title fw-bold">Wireless Headphones</h5>
+          <p class="text-muted mb-2">$59.99</p>
+          <button class="btn btn-primary">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="col-12 col-sm-6 col-md-3">
+        <div class="card product-card shadow-sm h-100 text-center p-3">
+          <img src="https://via.placeholder.com/200" class="card-img-top img-fluid mb-3" alt="Product 2">
+          <h5 class="card-title fw-bold">Smart Watch</h5>
+          <p class="text-muted mb-2">$89.99</p>
+          <button class="btn btn-primary">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="col-12 col-sm-6 col-md-3">
+        <div class="card product-card shadow-sm h-100 text-center p-3">
+          <img src="https://via.placeholder.com/200" class="card-img-top img-fluid mb-3" alt="Product 3">
+          <h5 class="card-title fw-bold">Bluetooth Speaker</h5>
+          <p class="text-muted mb-2">$45.00</p>
+          <button class="btn btn-primary">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="col-12 col-sm-6 col-md-3">
+        <div class="card product-card shadow-sm h-100 text-center p-3">
+          <img src="https://via.placeholder.com/200" class="card-img-top img-fluid mb-3" alt="Product 4">
+          <h5 class="card-title fw-bold">Gaming Mouse</h5>
+          <p class="text-muted mb-2">$39.99</p>
+          <button class="btn btn-primary">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-3 bg-dark text-white">
+    <small>&copy; 2025 ShopEase | All Rights Reserved</small>
+  </footer>
+
+  <!-- Bootstrap JS via CDN -->
+  <script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+  </script>
+
+</body>
+</html>
