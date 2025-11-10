@@ -1,1 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <style>
+    /* ----- GLOBAL STYLES ----- */
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    /* ----- HEADER ----- */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #212529;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 5%;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      margin-left: 2em;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffb703;
+    }
+
+    /* ----- MAIN SECTION ----- */
+    main {
+      margin-top: 90px; /* header height space */
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 3rem 10%;
+    }
+
+    .bio {
+      max-width: 700px;
+      font-size: 1.1em;
+      line-height: 1.8em;
+      margin-bottom: 2rem;
+    }
+
+    .profile-img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #ffb703;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ----- FOOTER ----- */
+    footer {
+      background-color: #212529;
+      color: #fff;
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* ----- RESPONSIVE DESIGN ----- */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+      }
+
+      nav {
+        margin-top: 0.5em;
+      }
+
+      nav a {
+        margin-left: 1em;
+      }
+
+      .bio {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <h1>Anamika Rai</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ===== MAIN SECTION ===== -->
+  <main id="home">
+    <img src="https://via.placeholder.com/200" alt="Profile Photo" class="profile-img">
+    <p class="bio">
+      Hi, I'm <strong>Anamika Rai</strong> — a passionate web developer focused on creating visually appealing, responsive, and efficient web solutions. I love combining design and technology to build meaningful digital experiences.
+    </p>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    © 2025 Anamika Rai | Designed with 💛 using HTML & CSS
+  </footer>
+
+</body>
+</html>
 
