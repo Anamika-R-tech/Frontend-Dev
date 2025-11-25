@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Student Registration Form</title>
+<style>
+input { display: block; margin-bottom: 10px; padding: 5px; }
+input.valid { border: 2px solid green; }
+input.invalid { border: 2px solid red; }
+span.error { color: red; font-size: 12px; display: block; margin-top: -8px; margin-bottom: 5px; }
+</style>
+</head>
+<body>
+<h2>Student Registration Form</h2>
+<form id="studentForm">
+    <label>Name:</label>
+    <input type="text" id="name">
+    <span class="error" id="nameError"></span>
+
+    <label>Email:</label>
+    <input type="text" id="email">
+    <span class="error" id="emailError"></span>
+
+    <label>Phone:</label>
+    <input type="text" id="phone">
+    <span class="error" id="phoneError"></span>
+
+    <label>Password:</label>
+    <input type="password" id="password">
+    <span class="error" id="passwordError"></span>
+
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+const form = document.getElementById("studentForm");
+
+// Regex patterns for validation
+const namePattern = /^[A-Za-z ]+$/;
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const phonePattern = /^\d{10}$/;
+const passwordPattern = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).+$/;
+
+// Function to validate input fields
+const validateInput = (input, pattern, errorId, message) => {
+    const value = input.value.trim();
+    if (!pattern.test(value)) {
+        input.classList.add("invalid");
+        input.classList.remove("valid");
+        document.getElementById(errorId).textContent = message;
+        return false;
+    } else {
+        input.classList.add("valid");
+        input.classList.remove("invalid");
+        document.getElementById(errorId).textContent = "";
+        return true;
+    }
+};
+
+// Form submission
+form.addEventListener("submit", e => {
+    e.preventDefault();
+
+    const isNameValid = validateInput(document.getElementById("name"), namePattern, "nameError", "Only alphabets allowed");
+    const isEmailValid = validateInput(document.getElementById("email"), emailPattern, "emailError", "Invalid email format");
+    const isPhoneValid = validateInput(document.getElementById("phone"), phonePattern, "phoneError", "Phone must be 10 digits");
+    const isPasswordValid = validateInput(document.getElementById("password"), passwordPattern, "passwordError", "Password must contain 1 uppercase, 1 number, 1 special char");
+
+    if(isNameValid && isEmailValid && isPhoneValid && isPasswordValid){
+        alert("Form submitted successfully!");
+    }
+});
+</script>
+</body>
+</html>
