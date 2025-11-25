@@ -1,0 +1,35 @@
+const textarea = document.getElementById("textArea");
+const counter = document.getElementById("counter");
+const resetBtn = document.getElementById("resetBtn");
+
+const MAX = 100;
+
+textarea.addEventListener("keydown", (e) => {
+    if (textarea.value.length >= MAX && e.key !== "Backspace") {
+        e.preventDefault(); // stop further typing
+    }
+});
+
+textarea.addEventListener("input", () => {
+    const remaining = MAX - textarea.value.length;
+    counter.textContent = `${remaining} characters left`;
+
+    if (remaining <= 20 && remaining > 0) {
+        counter.style.color = "gold";
+    } else if (remaining <= 0) {
+        counter.style.color = "red";
+    } else {
+        counter.style.color = "black";
+    }
+});
+
+resetBtn.addEventListener("click", () => {
+    textarea.value = "";
+    counter.textContent = "100 characters left";
+    counter.style.color = "black";
+});
+
+//HTML
+<textarea id="textArea"></textarea>
+<p id="counter">100 characters left</p>
+<button id="resetBtn">Reset</button>
