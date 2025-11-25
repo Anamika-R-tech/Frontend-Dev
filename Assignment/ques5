@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Team Members Directory</title>
+<style>
+.manager { font-weight: bold; cursor: pointer; margin-top: 10px; }
+.employee { margin-left: 20px; cursor: pointer; }
+.highlight { background-color: yellow; }
+.contact { display: none; font-size: 12px; margin-left: 40px; }
+</style>
+</head>
+<body>
+
+<div class="department">
+    <div class="manager">Manager A</div>
+    <div class="employee">Emp A1 <span class="contact">Email: a1@company.com</span></div>
+    <div class="employee">Emp A2 <span class="contact">Email: a2@company.com</span></div>
+</div>
+
+<div class="department">
+    <div class="manager">Manager B</div>
+    <div class="employee">Emp B1 <span class="contact">Email: b1@company.com</span></div>
+    <div class="employee">Emp B2 <span class="contact">Email: b2@company.com</span></div>
+</div>
+
+<script>
+"use strict";
+
+// Highlight direct reports
+document.querySelectorAll(".manager").forEach(manager => {
+    manager.addEventListener("click", () => {
+        const dept = manager.parentElement;
+        dept.querySelectorAll(".employee").forEach(emp => emp.classList.toggle("highlight"));
+    });
+});
+
+// Show contact info on hover
+document.querySelectorAll(".employee").forEach(emp => {
+    emp.addEventListener("mouseenter", () => emp.querySelector(".contact").style.display = "inline");
+    emp.addEventListener("mouseleave", () => emp.querySelector(".contact").style.display = "none");
+});
+
+// Random employee highlight siblings
+const allEmployees = document.querySelectorAll(".employee");
+if(allEmployees.length > 0){
+    const randomIndex = Math.floor(Math.random() * allEmployees.length);
+    const randomEmp = allEmployees[randomIndex];
+    randomEmp.parentElement.querySelectorAll(".employee").forEach(emp => {
+        if(emp !== randomEmp) emp.classList.add("highlight");
+    });
+}
+</script>
+</body>
+</html>
