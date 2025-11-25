@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Product Highlight</title>
+<style>
+.product { border: 1px solid #ccc; padding: 10px; margin: 10px; display: inline-block; width: 150px; cursor: pointer; }
+.product.selected { border-color: gold; background-color: #fffae6; }
+.product[data-discount] { border: 2px solid green; }
+.details { display: none; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<div class="product" data-stock="in" data-discount="10%">
+    Product A <div class="details">Discount: 10%</div>
+</div>
+<div class="product" data-stock="out">
+    Product B <div class="details">Out of stock</div>
+</div>
+<div class="product" data-stock="in">
+    Product C <div class="details">No discount</div>
+</div>
+
+<script>
+"use strict";
+
+document.querySelectorAll(".product").forEach(prod => {
+    // Highlight on click
+    prod.addEventListener("click", () => {
+        if(prod.dataset.stock === "out") alert("This product is out of stock!");
+        else prod.classList.toggle("selected");
+    });
+
+    // Show details on hover
+    prod.addEventListener("mouseenter", () => {
+        const details = prod.querySelector(".details");
+        if(details) details.style.display = "block";
+    });
+    prod.addEventListener("mouseleave", () => {
+        const details = prod.querySelector(".details");
+        if(details) details.style.display = "none";
+    });
+});
+</script>
+</body>
+</html>
