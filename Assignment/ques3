@@ -1,0 +1,85 @@
+{
+  "tasks": [
+    { "id": 1, "title": "Study DSA", "priority": "High", "completed": false },
+    { "id": 2, "title": "Complete Assignment", "priority": "Medium", "completed": false },
+    { "id": 3, "title": "Buy groceries", "priority": "Low", "completed": true },
+    { "id": 4, "title": "Gym workout", "priority": "Medium", "completed": false },
+    { "id": 5, "title": "Prepare PPT", "priority": "High", "completed": true }
+  ]
+}
+
+// Frontend
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Manager</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<h2>Task Manager</h2>
+
+<select id="filter">
+    <option value="">All</option>
+    <option value="Low">Low Priority</option>
+    <option value="Medium">Medium Priority</option>
+    <option value="High">High Priority</option>
+    <option value="completed">Completed</option>
+</select>
+
+<div id="taskList"></div>
+
+<script>
+function loadTasks(filter = "") {
+
+    let url = "http://localhost:3003/tasks";
+
+    if (filter === "completed") {
+        url += "?completed=true";
+    } else if (filter !== "") {
+        url += `?priority=${filter}`;
+    }
+
+    $.ajax({
+        url: url,
+        method: "GET",
+        success: function (tasks) {
+
+            $("#taskList").empty();
+
+            tasks.forEach(task => {
+                $("#taskList").append(`
+                    <div style="margin:10px; padding:10px; border:1px solid #aaa;">
+                        <input type="checkbox" ${task.completed ? "checked" : ""} 
+                            onclick="toggleTask(${task.id}, ${task.completed})">
+
+                        <strong>${task.title}</strong>  
+                        (Priority: ${task.priority})
+                    </div>
+                `);
+            });
+        }
+    });
+}
+
+function toggleTask(id, completed) {
+    $.ajax({
+        url: `http://localhost:3003/tasks/${id}`,
+        method: "PATCH",
+        data: { completed: !completed },
+        success: function () {
+            loadTasks($("#filter").val());
+        }
+    });
+}
+
+$("#filter").on("change", function () {
+    loadTasks($(this).val());
+});
+
+loadTasks();
+</script>
+
+</body>
+</html>
