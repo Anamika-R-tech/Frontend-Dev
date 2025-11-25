@@ -1,0 +1,29 @@
+class Employee {
+    constructor(name, department) {
+        this.name = name;
+        this.department = department;
+    }
+
+    work() {
+        return `${this.name} works in ${this.department}`;
+    }
+}
+
+class Manager extends Employee {
+    constructor(name, department) {
+        super(name, department);
+    }
+
+    // Overriding method → Polymorphism
+    work() {
+        return `${this.name} manages the ${this.department} team`;
+    }
+}
+
+// Creating objects
+let emp = new Employee("Aman", "Sales");
+let mgr = new Manager("Priya", "Development");
+
+// Runtime Polymorphism
+console.log(emp.work());
+console.log(mgr.work());
