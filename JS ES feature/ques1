@@ -1,1 +1,31 @@
+"use strict";
+
+// Mixed API data
+const apiData = ["25", "true", "false", "NaN", " ", "100px", "3.14", null, undefined];
+
+// Arrays to store results
+const validNumbers = [];
+const invalidNumbers = [];
+
+// Process each item
+apiData.forEach(item => {
+    // Convert to Number
+    const num = Number(item);
+    // Convert to Boolean
+    const bool = Boolean(item);
+    // Convert to String
+    const str = String(item);
+
+    // Check for valid number
+    if(!isNaN(num) && typeof num === "number" && item !== null && item !== undefined && String(item).trim() !== "" && !String(item).includes("px")){
+        validNumbers.push(num);
+        console.log(`Original: ${item} | Number: ${num} | Boolean: ${bool} | String: "${str}"`);
+    } else {
+        invalidNumbers.push(item);
+        console.log(`Skipped Invalid Number: ${item}`);
+    }
+});
+
+console.log("Valid Numbers Array:", validNumbers);
+console.log("Invalid Numbers Array:", invalidNumbers);
 
