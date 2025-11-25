@@ -1,0 +1,10 @@
+"use strict";
+
+function showMessage() {
+    // Under strict mode, assigning undeclared variable throws ReferenceError
+    // greeting = "Welcome"; 
+    let greeting = "Welcome";
+    console.log(greeting);
+}
+
+showMessage();
