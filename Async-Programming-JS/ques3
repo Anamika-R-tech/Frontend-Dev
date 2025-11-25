@@ -26,14 +26,4 @@ getBugs()
     console.error('Error fetching bugs:', err.message);
   });
 
-/*
-  You can also use async/await:
-  (async function showBugs() {
-    try {
-      const bugs = await getBugs();
-      console.table(bugs);
-    } catch (err) {
-      console.error(err.message);
-    }
-  })();
-*/
+
