@@ -1,0 +1,31 @@
+const menu = {
+    pizza: 250,
+    burger: 120,
+    pasta: 180,
+    coke: 40
+};
+
+function calculateBill(orderItems) {
+    try {
+        // map() → Get prices
+        let prices = orderItems.map(item => {
+            if (!menu[item]) {
+                throw new Error(`Item not available: ${item}`);
+            }
+            return menu[item];
+        });
+
+        // reduce() → Total price
+        let total = prices.reduce((sum, price) => sum + price, 0);
+
+        console.log("Order Items:", orderItems);
+        console.log("Total Bill:", total);
+
+    } catch (err) {
+        console.log("Error:", err.message);
+    }
+}
+
+// Test
+calculateBill(["pizza", "coke"]);
+calculateBill(["burger", "pasta", "icecream"]); // error case
