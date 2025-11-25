@@ -1,0 +1,19 @@
+// Constructor function
+function Car(brand, model) {
+    this.brand = brand;
+    this.model = model;
+}
+
+// Add a method to prototype
+Car.prototype.getDetails = function() {
+    console.log(`Car: ${this.brand} ${this.model}`);
+};
+
+// Create car objects
+const car1 = new Car("Toyota", "Corolla");
+const car2 = new Car("Honda", "Civic");
+
+// Call shared prototype method
+car1.getDetails(); // Car: Toyota Corolla
+car2.getDetails(); // Car: Honda Civic
+
