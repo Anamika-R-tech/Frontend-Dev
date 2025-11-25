@@ -1,0 +1,25 @@
+"use strict";
+
+// Original code
+/*
+console.log(score);
+announce();
+var score = 50;
+function announce() { console.log("Game started"); }
+let status = "ready";
+startGame();
+function startGame() { console.log(status); }
+*/
+
+// Fixed version with explanation:
+
+var score = 50; // var is hoisted but undefined initially
+console.log(score); // 50
+
+function announce() { console.log("Game started"); }
+announce(); // "Game started"
+
+let status = "ready"; // let is hoisted but in TDZ until initialized
+const startGame = () => { console.log(status); } // Arrow function
+
+startGame(); // "ready"
