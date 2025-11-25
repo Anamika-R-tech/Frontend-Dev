@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Welcome Page Greeting</title>
+<style>
+#greeting { font-size: 24px; margin: 20px 0; cursor: pointer; }
+#welcomeMsg { display: block; margin-top: 10px; }
+</style>
+</head>
+<body>
+<div id="greeting"></div>
+<div id="welcomeMsg">Welcome to our website!</div>
+<button id="changeGreeting">Change Greeting</button>
+<button id="toggleMsg">Toggle Welcome Message</button>
+
+<script>
+"use strict";
+
+// Function to get time-based greeting
+const getTimeGreeting = () => {
+    const hour = new Date().getHours();
+    if(hour < 12) return "Good Morning!";
+    else if(hour < 18) return "Good Afternoon!";
+    else return "Good Evening!";
+};
+
+// Initial greeting
+const greetingEl = document.getElementById("greeting");
+greetingEl.textContent = getTimeGreeting();
+
+// Greeting click alert
+greetingEl.addEventListener("click", () => alert("You clicked the greeting!"));
+
+// Change greeting to motivational quote
+document.getElementById("changeGreeting").addEventListener("click", () => {
+    greetingEl.textContent = "Keep pushing forward, success is near!";
+});
+
+// Toggle welcome message visibility
+document.getElementById("toggleMsg").addEventListener("click", () => {
+    const welcomeMsg = document.getElementById("welcomeMsg");
+    welcomeMsg.style.display = (welcomeMsg.style.display === "none") ? "block" : "none";
+});
+</script>
+</body>
+</html>
