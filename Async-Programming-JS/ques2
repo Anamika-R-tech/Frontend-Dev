@@ -1,0 +1,18 @@
+
+console.log('Start');
+
+// macrotask
+setTimeout(() => {
+  console.log('Macrotask: setTimeout callback');
+}, 0);
+
+// microtask
+Promise.resolve().then(() => {
+  console.log('Microtask: Promise.then callback');
+});
+
+// synchronous log
+console.log('Synchronous log');
+
+// final synchronous
+console.log('End');
