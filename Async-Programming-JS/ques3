@@ -1,0 +1,39 @@
+
+function getBugs() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const simulateFailure = Math.random() < 0.25; // 25% chance of failure
+      if (simulateFailure) {
+        reject(new Error('Failed to fetch bugs: API error'));
+      } else {
+        resolve([
+          { id: 1, title: 'UI glitch', severity: 'low' },
+          { id: 2, title: 'API timeout', severity: 'high' },
+          { id: 3, title: 'Login failure', severity: 'critical' }
+        ]);
+      }
+    }, 1000);
+  });
+}
+
+// Use the promise API
+getBugs()
+  .then(bugsArray => {
+    console.log('Bugs fetched successfully:');
+    console.table(bugsArray);
+  })
+  .catch(err => {
+    console.error('Error fetching bugs:', err.message);
+  });
+
+/*
+  You can also use async/await:
+  (async function showBugs() {
+    try {
+      const bugs = await getBugs();
+      console.table(bugs);
+    } catch (err) {
+      console.error(err.message);
+    }
+  })();
+*/
