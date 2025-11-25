@@ -1,1 +1,57 @@
 
+function waitRandom(minMs = 1000, maxMs = 2000) {
+  const ms = Math.floor(Math.random() * (maxMs - minMs + 1)) + minMs;
+  return new Promise(resolve => setTimeout(() => resolve(ms), ms));
+}
+
+// Step 1: boilWater
+function boilWater() {
+  return waitRandom().then(delay => {
+    // simulate 20% failure
+    if (Math.random() < 0.2) {
+      return Promise.reject(new Error(`Boiling failed after ${delay}ms`));
+    }
+    console.log(`Boiled water (${delay}ms)`);
+    return 'boiled water';
+  });
+}
+
+// Step 2: brewCoffee
+function brewCoffee(boiledWater) {
+  return waitRandom().then(delay => {
+    if (Math.random() < 0.15) {
+      return Promise.reject(new Error(`Brewing failed after ${delay}ms`));
+    }
+    console.log(`Brewed coffee using ${boiledWater} (${delay}ms)`);
+    return 'brewed coffee';
+  });
+}
+
+// Step 3: pourIntoCup
+function pourIntoCup(brewedCoffee) {
+  return waitRandom().then(delay => {
+    if (Math.random() < 0.1) {
+      return Promise.reject(new Error(`Pouring failed after ${delay}ms`));
+    }
+    console.log(`Poured ${brewedCoffee} into cup (${delay}ms)`);
+    return 'coffee in cup';
+  });
+}
+
+// Orchestrate using promise chaining
+function makeCoffeeForTeam() {
+  console.log('Starting coffee process...');
+  boilWater()
+    .then(water => brewCoffee(water))
+    .then(coffee => pourIntoCup(coffee))
+    .then(() => {
+      console.log('Coffee ready for the team!');
+    })
+    .catch(err => {
+      console.error('Coffee process failed:', err.message);
+    });
+}
+
+// Run
+makeCoffeeForTeam();
+
