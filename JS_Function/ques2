@@ -1,0 +1,17 @@
+
+function applyOperation(numbers, operation) {
+    return numbers.map(operation);
+}
+
+// Test array
+const numbers = [1, 2, 3, 4];
+
+// Double each number
+const doubled = applyOperation(numbers, num => num * 2);
+console.log("Doubled:", doubled); // [2, 4, 6, 8]
+
+// Square each number
+const squared = applyOperation(numbers, num => num ** 2);
+console.log("Squared:", squared); // [1, 4, 9, 16]
+
+
