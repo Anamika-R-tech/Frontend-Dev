@@ -1,0 +1,28 @@
+"use strict";
+
+const transactions = [
+    { id: 1, amount: 2000 },
+    { id: 2, amount: -500 },
+    { id: 3 },
+    null
+];
+
+const validTransactions = [];
+const invalidTransactions = [];
+
+transactions.forEach(tx => {
+    try {
+        if(tx === null) throw new Error("Null transaction");
+        if(!("id" in tx) || !("amount" in tx)) throw new Error("Missing id or amount");
+        if(tx.amount < 0) throw new Error("Negative amount");
+
+        validTransactions.push(tx);
+    } catch(error) {
+        invalidTransactions.push({ transaction: tx, reason: error.message });
+    }
+});
+
+console.log("Valid Transactions:", validTransactions);
+console.log("Invalid Transactions:", invalidTransactions);
+console.log(`Summary: ${validTransactions.length} valid, ${invalidTransactions.length} invalid`);
+
