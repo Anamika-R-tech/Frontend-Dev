@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dynamic Form Builder</title>
+</head>
+<body>
+<h2>Custom Form Builder</h2>
+<div id="formContainer"></div>
+<script>
+// FormBuilder class
+class FormBuilder {
+    constructor(fields) {
+        this.fields = fields;
+        this.formElement = document.createElement("form");
+        this.formElement.id = "dynamicForm";
+        this.renderForm();
+    }
+
+    renderForm() {
+        // Dynamically create inputs
+        this.fields.forEach(field => {
+            const label = document.createElement("label");
+            label.textContent = field.label;
+            const input = document.createElement("input");
+            input.type = field.type;
+            input.name = field.label;
+            input.style.display = "block";
+            input.style.marginBottom = "10px";
+            this.formElement.appendChild(label);
+            this.formElement.appendChild(input);
+        });
+
+        // Submit button
+        const submitBtn = document.createElement("button");
+        submitBtn.textContent = "Submit";
+        submitBtn.type = "button";
+        submitBtn.addEventListener("click", () => {
+            const data = this.getFormData();
+            console.log("Form Data:", data);
+            alert("Form Data logged in console!");
+        });
+        this.formElement.appendChild(submitBtn);
+
+        document.getElementById("formContainer").appendChild(this.formElement);
+    }
+
+    // Get form data as object
+    getFormData() {
+        const data = {};
+        this.fields.forEach(field => {
+            const input = this.formElement.querySelector(`input[name='${field.label}']`);
+            data[field.label] = input.value;
+        });
+        return data;
+    }
+}
+
+// Example usage
+const fields = [
+    {type: 'text', label: 'Username'},
+    {type: 'email', label: 'Email'},
+    {type: 'password', label: 'Password'}
+];
+
+const myForm = new FormBuilder(fields);
+</script>
+</body>
+</html>
