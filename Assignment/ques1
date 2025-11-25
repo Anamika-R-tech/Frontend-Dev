@@ -1,1 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Product Manager</title>
+</head>
+<body>
+<h2>E-Commerce Product Manager</h2>
+<script>
+// Product class definition
+class Product {
+    constructor(id, name, price, category) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.category = category;
+    }
+
+    // Apply a 10% discount
+    applyDiscount() {
+        this.price = this.price * 0.9;
+    }
+
+    // Display product details
+    display() {
+        return `ID: ${this.id}, Name: ${this.name}, Price: ₹${this.price.toFixed(2)}, Category: ${this.category}`;
+    }
+}
+
+// Create multiple product objects
+const products = [
+    new Product(1, "Laptop", 45000, "Electronics"),
+    new Product(2, "Headphones", 1200, "Electronics"),
+    new Product(3, "Notebook", 200, "Stationery"),
+    new Product(4, "Smartphone", 25000, "Electronics"),
+    new Product(5, "Chair", 1500, "Furniture")
+];
+
+// Apply discount to first product as an example
+products[0].applyDiscount();
+
+// Display products with price > 1000
+const expensiveProducts = products.filter(p => p.price > 1000);
+console.log("Products with price > 1000:");
+expensiveProducts.forEach(p => console.log(p.display()));
+</script>
+</body>
+</html>
 
