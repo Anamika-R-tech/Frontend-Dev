@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Special Offer Banner</title>
+<style>
+.banner { padding: 20px; background: #f0c040; margin: 10px 0; display: block; transition: opacity 0.5s; }
+</style>
+</head>
+<body>
+
+<div class="banner">Banner 1: 50% OFF</div>
+<div class="banner">Banner 2: Buy 1 Get 1</div>
+<div class="banner">Banner 3: Free Shipping</div>
+
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+<button id="slideUp">Slide Up</button>
+<button id="slideDown">Slide Down</button>
+<button id="fadeToggle">Fade Toggle</button>
+
+<script>
+"use strict";
+
+const banners = document.querySelectorAll(".banner");
+
+// Hide/Show buttons
+document.getElementById("hide").addEventListener("click", () => banners.forEach(b => b.style.display = "none"));
+document.getElementById("show").addEventListener("click", () => banners.forEach(b => b.style.display = "block"));
+
+// Slide Up/Down using height
+document.getElementById("slideUp").addEventListener("click", () => banners.forEach(b => b.style.height = "0px"));
+document.getElementById("slideDown").addEventListener("click", () => banners.forEach(b => b.style.height = "auto"));
+
+// Fade In/Out toggle
+document.getElementById("fadeToggle").addEventListener("click", () => {
+    banners.forEach(b => {
+        b.style.opacity = (b.style.opacity == "0") ? "1" : "0";
+    });
+});
+
+// Automatic rotation
+let index = 0;
+setInterval(() => {
+    banners.forEach((b,i) => b.style.display = "none");
+    banners[index].style.display = "block";
+    index = (index + 1) % banners.length;
+}, 5000);
+</script>
+</body>
+</html>
