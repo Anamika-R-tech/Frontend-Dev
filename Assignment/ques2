@@ -1,0 +1,72 @@
+{
+  "employees": [
+    { "id": 1, "name": "John Doe", "status": "active" },
+    { "id": 2, "name": "Anita Sharma", "status": "inactive" },
+    { "id": 3, "name": "Rahul Verma", "status": "active" },
+    { "id": 4, "name": "Priya Singh", "status": "inactive" },
+    { "id": 5, "name": "Aman Gupta", "status": "active" }
+  ]
+}
+
+// Frontend
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Dashboard</title>
+</head>
+<body>
+
+<h2>Employee Status Dashboard</h2>
+<div id="employeeList"></div>
+
+<script>
+function loadEmployees() {
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", "http://localhost:3002/employees");
+    xhr.onload = function () {
+        let data = JSON.parse(xhr.responseText);
+        let container = document.getElementById("employeeList");
+        container.innerHTML = "";
+
+        data.forEach(emp => {
+            let row = document.createElement("div");
+
+            row.innerHTML = `
+                <strong>${emp.name}</strong> — 
+                <span id="status-${emp.id}">${emp.status}</span>
+                <button onclick="toggleStatus(${emp.id}, '${emp.status}')">Toggle</button>
+            `;
+
+            container.appendChild(row);
+        });
+    };
+    xhr.send();
+}
+
+function toggleStatus(id, currentStatus) {
+    let newStatus = currentStatus === "active" ? "inactive" : "active";
+
+    // Update UI immediately
+    document.getElementById(`status-${id}`).innerText = newStatus;
+
+    let xhr = new XMLHttpRequest();
+    xhr.open("PATCH", `http://localhost:3002/employees/${id}`);
+    xhr.setRequestHeader("Content-Type", "application/json");
+
+    xhr.onload = function () {
+        if (xhr.status !== 200) {
+            alert("Update failed!");
+            // revert UI
+            document.getElementById(`status-${id}`).innerText = currentStatus;
+        }
+    };
+
+    xhr.send(JSON.stringify({ status: newStatus }));
+}
+
+loadEmployees();
+</script>
+
+</body>
+</html>
