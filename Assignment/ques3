@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Interactive FAQ</title>
+<style>
+.question { font-weight: bold; cursor: pointer; margin: 5px 0; }
+.answer { display: none; margin-left: 20px; }
+.highlight { background-color: yellow; }
+</style>
+</head>
+<body>
+
+<div class="faq">
+    <div class="question">What is your return policy?</div>
+    <div class="answer"><input type="text" placeholder="Your answer here"></div>
+
+    <div class="question">Do you offer free shipping?</div>
+    <div class="answer"><input type="text"></div>
+
+    <div class="question">How to contact support?</div>
+    <div class="answer"><input type="text"></div>
+</div>
+
+<script>
+"use strict";
+
+document.querySelectorAll(".faq .question").forEach(q => {
+    // Toggle answer visibility
+    q.addEventListener("click", () => {
+        const ans = q.nextElementSibling;
+        ans.style.display = (ans.style.display === "block") ? "none" : "block";
+    });
+
+    // Hover change color
+    q.addEventListener("mouseenter", () => q.style.color = "blue");
+    q.addEventListener("mouseleave", () => q.style.color = "black");
+
+    // Double-click to collapse all
+    q.addEventListener("dblclick", () => {
+        document.querySelectorAll(".faq .answer").forEach(a => a.style.display = "none");
+    });
+});
+
+// Input focus/blur highlight parent question
+document.querySelectorAll(".faq input").forEach(input => {
+    input.addEventListener("focus", () => input.parentElement.previousElementSibling.classList.add("highlight"));
+    input.addEventListener("blur", () => input.parentElement.previousElementSibling.classList.remove("highlight"));
+});
+</script>
+</body>
+</html>
