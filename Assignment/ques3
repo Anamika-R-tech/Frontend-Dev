@@ -1,0 +1,18 @@
+function Product(name, price) {
+    this.name = name;
+    this.price = price;
+}
+
+Product.prototype.applyDiscount = function(percent) {
+    let discountAmount = this.price * (percent / 100);
+    return this.price - discountAmount;    // abstraction: user only sees result
+};
+
+// Create 3 products
+let p1 = new Product("Laptop", 50000);
+let p2 = new Product("Phone", 30000);
+let p3 = new Product("Shoes", 2500);
+
+console.log(p1.name, "after 20% discount:", p1.applyDiscount(20));
+console.log(p2.name, "after 10% discount:", p2.applyDiscount(10));
+console.log(p3.name, "after 50% discount:", p3.applyDiscount(50));
