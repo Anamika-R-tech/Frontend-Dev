@@ -1,0 +1,20 @@
+// Using arrow function
+const userArrow = {
+    name: "Anamika",
+    showName: () => {
+        console.log(this.name);
+    }
+};
+
+userArrow.showName(); // undefined
+
+// Fix using normal function
+const userNormal = {
+    name: "Anamika",
+    showName: function() {
+        console.log(this.name);
+    }
+};
+
+userNormal.showName(); // Anamika
+
