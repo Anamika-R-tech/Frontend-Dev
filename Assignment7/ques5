@@ -1,0 +1,51 @@
+const modal = document.getElementById("modal");
+const modalImg = document.getElementById("modalImg");
+const gallery = document.getElementById("gallery");
+
+// Click image → show modal
+gallery.addEventListener("click", (e) => {
+    if (e.target.tagName === "IMG") {
+        modal.style.display = "flex";
+        modalImg.src = e.target.src;
+    }
+});
+
+// Stop closing when clicking inside modal box
+modalImg.addEventListener("click", (e) => {
+    e.stopPropagation();
+});
+
+// Clicking outside closes modal
+modal.addEventListener("click", () => {
+    modal.style.display = "none";
+});
+
+//HTML
+<div id="gallery">
+  <img src="1.jpg">
+  <img src="2.jpg">
+  <img src="3.jpg">
+  <img src="4.jpg">
+  <img src="5.jpg">
+  <img src="6.jpg">
+</div>
+
+<div id="modal">
+  <img id="modalImg">
+</div>
+
+// CSS
+
+#gallery img { width: 150px; margin: 10px; cursor: pointer; }
+#modal {
+    display:none;
+    position:fixed;
+    top:0; left:0;
+    height:100%; width:100%;
+    background:rgba(0,0,0,0.7);
+    justify-content:center;
+    align-items:center;
+}
+#modal img { width: 60%; border-radius: 10px; }
+
+
