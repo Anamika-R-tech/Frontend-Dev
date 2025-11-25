@@ -1,0 +1,55 @@
+let step = 1;
+
+const steps = document.querySelectorAll(".step");
+const nextBtn = document.getElementById("next");
+const backBtn = document.getElementById("back");
+const summary = document.getElementById("summary");
+
+// Show correct step
+function showStep() {
+    steps.forEach((s, i) => {
+        s.style.display = (i + 1 === step) ? "block" : "none";
+    });
+
+    backBtn.style.display = step === 1 ? "none" : "inline-block";
+    nextBtn.textContent = step === 3 ? "Finish" : "Next";
+}
+
+nextBtn.addEventListener("click", () => {
+    const input = steps[step - 1].querySelector("input");
+
+    if (!input.value.trim()) {
+        alert("Field cannot be empty");
+        return;
+    }
+
+    if (step < 3) {
+        step++;
+        showStep();
+    } else {
+        // Show summary
+        summary.innerHTML = `
+            <h3>Summary</h3>
+            Name: ${document.getElementById("name").value}<br>
+            Email: ${document.getElementById("email").value}<br>
+            Password: ${document.getElementById("password").value}
+        `;
+        summary.style.display = "block";
+    }
+});
+
+backBtn.addEventListener("click", () => {
+    if (step > 1) step--;
+    showStep();
+});
+
+showStep();
+//HTML
+<div class="step"><input id="name" placeholder="Enter name"></div>
+<div class="step"><input id="email" placeholder="Enter email"></div>
+<div class="step"><input id="password" type="password"></div>
+
+<button id="back">Back</button>
+<button id="next">Next</button>
+
+<div id="summary"></div>
