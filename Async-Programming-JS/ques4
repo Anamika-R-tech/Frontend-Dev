@@ -1,0 +1,44 @@
+
+function serverA() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (Math.random() < 0.15) {
+        reject(new Error('Server A failed'));
+      } else {
+        resolve('Server A completed (2s)');
+      }
+    }, 2000);
+  });
+}
+
+function serverB() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (Math.random() < 0.15) {
+        reject(new Error('Server B failed'));
+      } else {
+        resolve('Server B completed (3s)');
+      }
+    }, 3000);
+  });
+}
+
+// Promise.all to wait for all
+Promise.all([serverA(), serverB()])
+  .then(results => {
+    console.log('Deployment completed for all servers');
+    console.log('Details:', results);
+  })
+  .catch(err => {
+    console.error('One or more deployments failed:', err.message);
+  });
+
+// Promise.race to get the fastest response
+Promise.race([serverA(), serverB()])
+  .then(firstResult => {
+    console.log('Fastest response:', firstResult);
+  })
+  .catch(err => {
+    console.error('Fastest response failed:', err.message);
+  });
+
