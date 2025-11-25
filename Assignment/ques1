@@ -1,1 +1,29 @@
+class Student {
+    constructor(name, marks) {
+        this.name = name;
+        this.marks = marks;
+    }
+
+    calculateAverage() {
+        let total = this.marks.reduce((sum, m) => sum + m, 0);
+        return total / this.marks.length;
+    }
+
+    getGrade() {
+        let avg = this.calculateAverage();
+        if (avg >= 90) return "A";
+        else if (avg >= 75) return "B";
+        else if (avg >= 50) return "C";
+        return "F";
+    }
+}
+
+// Test 3 Students
+let s1 = new Student("Anamika", [95, 88, 92]);
+let s2 = new Student("Rohit", [70, 65, 72]);
+let s3 = new Student("Meera", [40, 55, 48]);
+
+console.log(s1.name, s1.calculateAverage(), s1.getGrade());
+console.log(s2.name, s2.calculateAverage(), s2.getGrade());
+console.log(s3.name, s3.calculateAverage(), s3.getGrade());
 
