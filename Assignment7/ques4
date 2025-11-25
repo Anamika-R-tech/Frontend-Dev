@@ -1,0 +1,23 @@
+const body = document.body;
+
+document.getElementById("light").addEventListener("click", () => {
+    body.setAttribute("data-theme", "light");
+});
+
+document.getElementById("dark").addEventListener("click", () => {
+    body.setAttribute("data-theme", "dark");
+});
+
+document.getElementById("blue").addEventListener("click", () => {
+    body.setAttribute("data-theme", "blue");
+});
+
+//HTML
+<button id="light">Light</button>
+<button id="dark">Dark</button>
+<button id="blue">Blue</button>
+
+//CSS
+body[data-theme="light"] { background: white; color: black; }
+body[data-theme="dark"] { background: #222; color: white; }
+body[data-theme="blue"] { background: #0077ff; color: white; }
