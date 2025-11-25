@@ -1,1 +1,93 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Apple iPhone 14",
+      "price": 79999,
+      "image": "https://via.placeholder.com/80"
+    },
+    {
+      "id": 2,
+      "name": "Samsung Galaxy S23",
+      "price": 74999,
+      "image": "https://via.placeholder.com/80"
+    },
+    {
+      "id": 3,
+      "name": "OnePlus Nord",
+      "price": 29999,
+      "image": "https://via.placeholder.com/80"
+    },
+    {
+      "id": 4,
+      "name": "HP Laptop",
+      "price": 55000,
+      "image": "https://via.placeholder.com/80"
+    },
+    {
+      "id": 5,
+      "name": "Sony Headphones",
+      "price": 9999,
+      "image": "https://via.placeholder.com/80"
+    }
+  ]
+}
+
+
+// Frontend
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Search</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<h2>Live Product Search</h2>
+<input type="text" id="searchBox" placeholder="Search products...">
+
+<div id="loading" style="display:none;">Loading...</div>
+
+<div id="results"></div>
+
+<script>
+$(document).ready(function () {
+
+    $("#searchBox").on("keyup", function () {
+        let value = $(this).val();
+        $("#loading").show();
+
+        $.ajax({
+            url: `http://localhost:3001/products?q=${value}`,
+            method: "GET",
+            success: function (products) {
+
+                $("#loading").hide();
+                $("#results").empty();
+
+                if (products.length === 0) {
+                    $("#results").html("<p>No products found</p>");
+                    return;
+                }
+
+                products.forEach(p => {
+                    $("#results").append(`
+                        <div style="margin:10px; border:1px solid #ccc; padding:10px;">
+                            <img src="${p.image}" width="80">
+                            <h3>${p.name}</h3>
+                            <p>Price: ₹${p.price}</p>
+                        </div>
+                    `);
+                });
+            }
+        });
+
+    });
+
+});
+</script>
+
+</body>
+</html>
 
