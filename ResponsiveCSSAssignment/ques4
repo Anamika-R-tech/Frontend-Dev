@@ -1,0 +1,57 @@
+//html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Typography</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="text-section">
+        <h1>Welcome to Responsive Typography</h1>
+        <p>This section demonstrates how font sizes can scale automatically using relative units and the clamp() function. Resize your browser to see the changes in action.</p>
+    </section>
+</body>
+</html>
+//css
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    background-color: #eef2f3;
+}
+
+
+.text-section {
+    text-align: center;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+
+h1 {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    line-height: 1.6;
+}
+
+@media (max-width: 700px) {
+    h1 {
+        margin-bottom: 15px;
+    }
+    p {
+        line-height: 1.8;
+    }
+}
