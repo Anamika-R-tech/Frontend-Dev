@@ -15,3 +15,47 @@
     </div>
 </body>
 </html>
+
+/*CSS*/
+
+/* Centered layout */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    background-color: #eef2f3;
+}
+
+/* Section styling */
+.text-section {
+    text-align: center;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Responsive heading and paragraph */
+h1 {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    line-height: 1.6;
+}
+
+/* Adjust line-height and spacing for small screens */
+@media (max-width: 700px) {
+    h1 {
+        margin-bottom: 15px;
+    }
+    p {
+        line-height: 1.8;
+    }
+}
