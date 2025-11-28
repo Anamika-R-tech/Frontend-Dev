@@ -1,0 +1,66 @@
+<section class="image-showcase">
+  <figure>
+    <img src="https://via.placeholder.com/300x200" alt="Image 1">
+    <figcaption>Caption 1</figcaption>
+  </figure>
+  <figure>
+    <img src="https://via.placeholder.com/300x200" alt="Image 2">
+    <figcaption>Caption 2</figcaption>
+  </figure>
+  <figure>
+    <img src="https://via.placeholder.com/300x200" alt="Image 3">
+    <figcaption>Caption 3</figcaption>
+  </figure>
+  <figure>
+    <img src="https://via.placeholder.com/300x200" alt="Image 4">
+    <figcaption>Caption 4</figcaption>
+  </figure>
+  <figure>
+    <img src="https://via.placeholder.com/300x200" alt="Image 5">
+    <figcaption>Caption 5</figcaption>
+  </figure>
+  <figure>
+    <img src="https://via.placeholder.com/300x200" alt="Image 6">
+    <figcaption>Caption 6</figcaption>
+  </figure>
+</section>
+
+.image-showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.image-showcase figure {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  margin: 0;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.image-showcase figure img {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.image-showcase figure:hover img {
+  transform: scale(1.1);
+  filter: brightness(70%);
+}
+
+.image-showcase figcaption {
+  text-align: center;
+  padding: 10px;
+  font-weight: 500;
+}
+
+@media (max-width: 700px) {
+  .image-showcase {
+    grid-template-columns: 1fr;
+  }
+}
