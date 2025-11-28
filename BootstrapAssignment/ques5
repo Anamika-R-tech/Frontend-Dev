@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Blog</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom theme variables */
+        :root {
+            --bs-primary: #ff6f61;
+            --bs-font-sans-serif: 'Roboto', sans-serif;
+        }
+
+        body {
+            font-family: var(--bs-font-sans-serif);
+        }
+
+        header, footer {
+            background-color: var(--bs-primary);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .card-title {
+            color: var(--bs-primary);
+        }
+
+        .btn-custom {
+            background-color: var(--bs-primary);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>My Blog</h1>
+        <p class="lead">Sharing thoughts and ideas</p>
+    </header>
+
+    <!-- Blog Posts -->
+    <div class="container my-5">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <img src="https://via.placeholder.com/600x300" class="card-img-top" alt="Post 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Blog Post 1</h5>
+                        <p class="card-text">This is a short description of the first blog post.</p>
+                        <a href="#" class="btn btn-custom">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <img src="https://via.placeholder.com/600x300" class="card-img-top" alt="Post 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Blog Post 2</h5>
+                        <p class="card-text">This is a short description of the second blog post.</p>
+                        <a href="#" class="btn btn-custom">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 My Blog. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
