@@ -1,0 +1,21 @@
+// Generate 8 random scores (30–100)
+let scores = Array.from({length: 8}, () => Math.floor(Math.random() * 71) + 30);
+
+console.log("Scores:", scores);
+
+// Highest and lowest
+let highest = Math.max(...scores);
+let lowest = Math.min(...scores);
+
+// Average score
+let average = scores.reduce((sum, score) => sum + score, 0) / scores.length;
+
+// Students passed (>=50)
+let passedCount = scores.filter(score => score >= 50).length;
+
+// Display summary
+console.log(`Performance Summary:
+- Highest Score: ${highest}
+- Lowest Score: ${lowest}
+- Average Score: ${average.toFixed(2)}
+- Students Passed: ${passedCount}/${scores.length}`);
