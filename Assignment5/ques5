@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing Plans</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.pricing-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.plan {
+    background-color: white;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    width: 250px;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    transition: transform 0.3s, background-color 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.plan:hover {
+    transform: scale(1.05);
+    background-color: #f0f8ff;
+}
+
+.plan.popular {
+    border: 2px solid #ff9800;
+    background-color: #fff3e0;
+}
+
+.plan h2 {
+    margin-top: 0;
+}
+
+.features {
+    text-align: left;
+    margin: 10px 0;
+    flex-grow: 1;
+}
+
+.features li {
+    margin: 5px 0;
+}
+
+.price {
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: #ff5722;
+}
+
+.plan a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #2196f3;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.plan a:hover {
+    background-color: #1976d2;
+}
+
+@media (max-width: 800px) {
+    .pricing-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style>
+</head>
+<body>
+
+<h1>Our Pricing Plans</h1>
+<div class="pricing-container">
+    <div class="plan">
+        <h2>Basic</h2>
+        <ul class="features">
+            <li>Feature A</li>
+            <li>Feature B</li>
+            <li>Feature C</li>
+        </ul>
+        <div class="price">$10/month</div>
+        <a href="#">Choose Plan</a>
+    </div>
+    <div class="plan popular">
+        <h2>Standard</h2>
+        <ul class="features">
+            <li>Feature A</li>
+            <li>Feature B</li>
+            <li>Feature C</li>
+            <li>Feature D</li>
+        </ul>
+        <div class="price">$25/month</div>
+        <a href="#">Choose Plan</a>
+    </div>
+    <div class="plan">
+        <h2>Premium</h2>
+        <ul class="features">
+            <li>Feature A</li>
+            <li>Feature B</li>
+            <li>Feature C</li>
+            <li>Feature D</li>
+            <li>Feature E</li>
+        </ul>
+        <div class="price">$50/month</div>
+        <a href="#">Choose Plan</a>
+    </div>
+</div>
+
+</body>
+</html>
