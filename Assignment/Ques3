@@ -1,0 +1,82 @@
+//HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="q3.css">
+    <title>Homepage</title>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">Projects</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
+
+<main>
+    <div class="box">Services</div>
+    <div class="box">Projects</div>
+    <div class="box">Contact</div>
+</main>
+
+<footer>
+    <p>Footer Content</p>
+</footer>
+
+</body>
+</html>
+
+
+//CSS
+body {
+    margin: 0;
+    font-family: Arial;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background: #444;
+}
+header nav a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 30px;
+}
+
+.box {
+    background: #ddd;
+    padding: 40px;
+    flex: 1;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.box:hover {
+    transform: rotate(2deg);
+}
+
+footer {
+    background: #333;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
