@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Long Article</title>
+<style>
+body {
+    font-family: Georgia, serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #fafafa;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    margin: 10px 0;
+}
+
+.subheading {
+    text-align: center;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+p {
+    margin: 20px 0;
+}
+
+p::first-letter {
+    font-size: 2em;
+    font-weight: bold;
+    color: #ff5722;
+}
+
+p::first-line {
+    font-weight: bold;
+}
+
+mark {
+    background-color: #ffeb3b;
+    padding: 0 4px;
+}
+
+blockquote {
+    border-left: 4px solid #2196f3;
+    background-color: #e3f2fd;
+    padding: 10px 20px;
+    margin: 20px 0;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>The Future of Web Design</h1>
+    <div class="subheading">By Alex Williams | Published Nov 29, 2025</div>
+</header>
+
+<article>
+    <p>The <mark>web development</mark> landscape is constantly evolving. Designers and developers must stay updated with the latest tools and frameworks to build modern, user-friendly websites.</p>
+
+    <p>Responsive design has become crucial. With the rise of mobile devices, ensuring a website looks great on all screens is <mark>mandatory</mark> for user satisfaction.</p>
+
+    <p>Performance optimization is another key factor. Websites must load quickly to retain users and improve SEO rankings, which is why techniques like lazy loading and code minification are widely used.</p>
+
+    <p><blockquote>“Good design is obvious. Great design is transparent.” – Joe Sparano</blockquote></p>
+
+    <p>Finally, accessibility cannot be ignored. Making sure websites are usable by people with <mark>disabilities</mark> is both a legal requirement and an ethical responsibility.</p>
+</article>
+
+</body>
+</html>
