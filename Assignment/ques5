@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced CSS Selectors</title>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e0f7fa;
+    padding: 50px 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #fff;
+    border-left: 5px solid #00796b;
+}
+
+
+input[type="text"] {
+    padding: 5px;
+    margin: 10px 0;
+}
+
+a[href^="https"] {
+    color: green;
+    font-weight: bold;
+}
+
+
+li:hover {
+    background-color: #b2ebf2;
+}
+
+input:focus {
+    border: 2px solid #00796b;
+}
+
+li:nth-child(odd) {
+    background-color: #f1f8e9;
+}
+
+li::before {
+    content: "✔ ";
+    color: #00796b;
+}
+
+ul > li {
+    font-size: 16px;
+}
+ul li + li {
+    border-top: 1px dashed #00796b;
+}
+ul li ~ li {
+    font-style: italic;
+}
+</style>
+</head>
+<body>
+
+<h2>Advanced CSS Selectors</h2>
+
+<ul>
+    <li>Item 1: First list item</li>
+    <li>Item 2: Second list item</li>
+    <li>Item 3: Third list item</li>
+    <li>Item 4: Fourth list item</li>
+</ul>
+
+<input type="text" placeholder="Type here...">
+<br>
+<a href="https://www.example.com">Secure Link Example</a>
+
+</body>
+</html>
