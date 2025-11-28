@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Frameset Example</title>
+</head>
+<frameset rows="100,*">
+    <frame src="nav.html" name="topframe">
+    <frame src="message.html" name="bottomframe">
+</frameset>
+</html>
