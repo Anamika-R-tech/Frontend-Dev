@@ -1,0 +1,66 @@
+//HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="q2.css">
+    <title>Product Grid</title>
+</head>
+<body>
+
+<div class="grid">
+    <div class="card">Product 1 <span>$20</span></div>
+    <div class="card">Product 2 <span>$25</span></div>
+    <div class="card">Product 3 <span>$30</span></div>
+    <div class="card">Product 4 <span>$40</span></div>
+    <div class="card">Product 5 <span>$15</span></div>
+    <div class="card">Product 6 <span>$22</span></div>
+    <div class="card">Product 7 <span>$18</span></div>
+    <div class="card">Product 8 <span>$29</span></div>
+</div>
+
+</body>
+</html>
+
+
+// CSS
+body {
+    margin: 0;
+    font-family: Arial;
+    padding: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: #eee;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 180px;
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
