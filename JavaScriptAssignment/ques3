@@ -1,0 +1,30 @@
+// Cinema Ticketing System
+
+let showTime = "evening";   // "morning" or "evening"
+let age = 65;               // User age
+let isStudent = false;      // true if student
+let tickets = 4;             // Number of tickets
+
+// Base price
+let basePrice = (showTime === "morning") ? 120 : 180;
+let totalPrice = basePrice * tickets;
+
+// Calculate discount
+let discount = 0;
+if (isStudent) {
+    discount = 0.1 * totalPrice;
+} else if (age > 60) {
+    discount = 0.2 * totalPrice;
+}
+
+// Price after discount
+let discountedTotal = totalPrice - discount;
+
+// Add service fee if more than 3 tickets
+let serviceFee = (tickets > 3) ? 50 : 0;
+let finalAmount = discountedTotal + serviceFee;
+
+// Output
+console.log("Base Price: ₹" + totalPrice);
+console.log("Discounted Total: ₹" + discountedTotal);
+console.log("Final Amount (with service fee): ₹" + finalAmount);
