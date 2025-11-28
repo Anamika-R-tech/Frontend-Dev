@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Cards Animation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="profile-container">
+        <div class="profile-card">
+            <img src="https://via.placeholder.com/200" alt="Profile 1">
+            <h3>John Doe</h3>
+            <p>Web Developer</p>
+        </div>
+        <div class="profile-card">
+            <img src="https://via.placeholder.com/200" alt="Profile 2">
+            <h3>Jane Smith</h3>
+            <p>Designer</p>
+        </div>
+        <div class="profile-card">
+            <img src="https://via.placeholder.com/200" alt="Profile 3">
+            <h3>Mike Lee</h3>
+            <p>Photographer</p>
+        </div>
+    </div>
+</body>
+</html>
+// CSS
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 50px 20px;
+    background-color: #f7f7f7;
+}
+
+.profile-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    justify-content: center;
+}
+
+.profile-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 250px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, filter 0.3s ease;
+    animation: fadeIn 1s ease forwards;
+}
+
+.profile-card img {
+    width: 100%;
+    border-radius: 50%;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.profile-card:hover img {
+    filter: none;
+}
+
+.profile-card:hover {
+    transform: translateY(-10px);
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+
+@media (max-width: 800px) {
+    .profile-card {
+        width: 100%;
+    }
+}
