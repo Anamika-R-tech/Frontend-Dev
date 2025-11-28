@@ -1,0 +1,27 @@
+// Banking Interest Calculator
+
+let accountType = "fixed";  // "savings" or "fixed"
+let amount = 120000;         // Deposit amount in ₹
+let years = 3;               // Number of years
+
+// Determine base interest rate
+let rate = 0;
+if (accountType === "savings") {
+    rate = 4;
+} else if (accountType === "fixed") {
+    rate = 6.5;
+}
+
+// Bonus interest for high deposits
+if (amount > 100000) {
+    rate += 1;
+}
+
+// Calculate final balance using compound interest formula
+let total = amount * Math.pow((1 + rate / 100), years);
+
+// Round to two decimals
+total = total.toFixed(2);
+
+// Output results
+console.log("Final Balance after " + years + " years: ₹" + total);
