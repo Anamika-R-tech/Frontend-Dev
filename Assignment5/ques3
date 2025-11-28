@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team Members</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.team-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 300px;
+    text-align: center;
+    box-sizing: border-box;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.card.highlight {
+    background-color: #ffe0b2;
+    border: 2px solid #ff9800;
+}
+
+.card h3 {
+    margin: 10px 0 5px 0;
+}
+
+.card p.role {
+    font-weight: bold;
+    margin: 5px 0 10px 0;
+}
+
+@media (max-width: 600px) {
+    .team-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style>
+</head>
+<body>
+
+<h1>Our Team</h1>
+<div class="team-container">
+    <div class="card highlight">
+        <h3>Jane Doe</h3>
+        <p class="role">Team Lead</p>
+        <p>Jane coordinates the team and ensures project deadlines are met efficiently.</p>
+    </div>
+    <div class="card">
+        <h3>John Smith</h3>
+        <p class="role">Frontend Developer</p>
+        <p>John designs beautiful user interfaces and enhances user experiences.</p>
+    </div>
+    <div class="card">
+        <h3>Emily Johnson</h3>
+        <p class="role">Backend Developer</p>
+        <p>Emily builds scalable backend systems and manages the database infrastructure.</p>
+    </div>
+</div>
+
+</body>
+</html>
