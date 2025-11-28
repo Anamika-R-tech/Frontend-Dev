@@ -1,1 +1,24 @@
+// Global variable
+let bonus = 5000;
+
+// Function to calculate salary
+function calculateSalary(isPermanent) {
+    // Local variable
+    let salary = 40000;
+
+    // Add bonus if employee is permanent
+    let totalSalary = salary;
+    if (isPermanent) {
+        totalSalary += bonus;
+    }
+
+    console.log(`Total Salary (isPermanent=${isPermanent}): ${totalSalary}`);
+}
+
+// Test cases
+calculateSalary(true);   // Should include bonus
+calculateSalary(false);  // Should NOT include bonus
+
+// Demonstrate global scope unaffected
+console.log(`Global bonus value: ${bonus}`);
 
