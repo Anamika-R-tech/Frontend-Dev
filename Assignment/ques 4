@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Selectors Practice</title>
+  <link rel="stylesheet" href="selectors.css">
+</head>
+<body>
+  <header>
+    <h1>CSS Selectors Practice</h1>
+  </header>
+
+  <main>
+    <p id="first-paragraph">This is a paragraph with an ID selector.</p>
+    <p class="highlight">This paragraph uses a class selector.</p>
+    <p title="special">This paragraph uses an attribute selector.</p>
+
+    <ul>
+      <li>List item 1</li>
+      <li class="highlight">List item 2</li>
+      <li>List item 3</li>
+    </ul>
+
+    <div>
+      <p>Paragraph inside a div (descendant selector)</p>
+      <p class="highlight">Paragraph with class inside a div</p>
+    </div>
+
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+    <p>Paragraph 3</p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 CSS Practice</p>
+  </footer>
+</body>
+</html>
+
+
+p {
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+#first-paragraph {
+  font-weight: bold;
+}
+
+
+.highlight {
+  background-color: #f0f0f0;
+  padding: 5px;
+}
+
+p[title="special"] {
+  color: #d6336c;
+  font-style: italic;
+}
+
+div p {
+  font-size: 16px;
+}
+
+
+ul > li {
+  list-style-type: square;
+}
+
+p + p {
+  margin-top: 10px;
+  border-top: 1px dashed #ccc;
+}
+
+
+p ~ p {
+  color: #555;
+}
+
+header, footer {
+  background-color: #eee;
+  text-align: center;
+  padding: 10px 0;
+}
