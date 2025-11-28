@@ -1,1 +1,28 @@
+// E-Commerce Delivery Estimator
+
+// Input variables
+let orderAmount = 450;       // Example order amount in ₹
+let isPremium = false;       // true if user is premium member
+let isRemote = true;         // true if delivery address is remote
+
+// Initialize delivery fee and delivery days
+let deliveryFee = 0;
+let deliveryDays = 3;
+
+// Check if order is below 500 and user is not premium
+if (orderAmount < 500 && !isPremium) {
+    deliveryFee = 50;
+}
+
+// Adjust delivery days for remote locations
+if (isRemote) {
+    deliveryDays += 2;
+}
+
+// Calculate total cost
+let totalCost = orderAmount + deliveryFee;
+
+// Output results
+console.log("Total Cost: ₹" + totalCost);
+console.log("Estimated Delivery Time: " + deliveryDays + " days");
 
